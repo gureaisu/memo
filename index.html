@@ -1,596 +1,1445 @@
 <!DOCTYPE html>
+
 <html lang="zh-TW">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>文政 - 全端工程師 | LinkedIn</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
 
-        body {
-            font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', 'Microsoft JhengHei', Arial, sans-serif;
-            line-height: 1.5;
-            color: rgba(0, 0, 0, 0.9);
-            background: #f3f2ef;
-            min-height: 100vh;
-        }
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>
+        豐原鉅豐牙醫診所
+    </title>
+    <meta name="keywords" content="豐原鉅豐牙醫診所,牙醫,牙醫診所,豐原牙醫診所,台中縣牙醫診所,豐原牙醫,豐原牙醫推薦,牙科診所,豐原牙科診所,植牙,人工植牙,牙周病,牙周病治療,牙齒美白,牙齒美白貼片,3D齒雕,牙齒矯正,25159933" />
+    <meta name="description" content="豐原鉅豐牙醫診所：豐原牙醫診所,豐原牙科診所,豐原牙醫推薦,透過高科技與最新技術,讓您的牙齒問題,確實得到解決,診療項目有人工植牙,牙周病治療,牙齒矯正,牙齒美白,3D齒雕,25159933。" />
+    <meta name="revisit-after" content="2 Days" />
+    <meta name="author" content="豐原鉅豐牙醫診所" />
+    <meta name="copyright" content="豐原鉅豐牙醫診所" />
+    <meta name="robots" content="index, follow" />
+    <meta http-equiv="content-language" content="zh-tw" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="http://www.i-dentist.com.tw" />
 
-        .container {
-            max-width: 1128px;
-            margin: 0 auto;
-            padding: 24px 0;
-        }
 
-        /* LinkedIn Card Style */
-        .card {
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.08);
-            margin-bottom: 8px;
-            overflow: hidden;
-        }
+    <!-- hamburgers css-->
+    <link rel="stylesheet" href="css/hamburgers.css" />
+    <!-- 自訂css -->
+    <link rel="stylesheet" href="css/style_tw.css?v=11" />
+    <link rel="stylesheet" href="css/news.css?v=3" />
 
-        /* Profile Header */
-        .profile-header {
-            position: relative;
-        }
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
 
-        .cover-photo {
+
+
+    <!-- Loading -->
+    <style type="text/css">
+        #loading {
+            position: fixed;
+            top: 0px;
+            left: 0px;
             width: 100%;
-            height: 200px;
-            background: linear-gradient(135deg, #0077b5 0%, #00a0dc 100%);
+            height: 100%;
+            z-index: 99999;
+            background: #FFFFFF;
+            text-align: center;
         }
 
-        .profile-info {
-            padding: 0 24px 24px 24px;
-            position: relative;
-        }
-
-        .profile-avatar {
-            width: 152px;
-            height: 152px;
-            border-radius: 50%;
-            background: #0077b5;
-            border: 4px solid white;
-            position: absolute;
-            top: -76px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 60px;
-            color: white;
-            font-weight: 600;
-        }
-
-        .profile-content {
-            padding-top: 80px;
-        }
-
-        .profile-name {
-            font-size: 32px;
-            font-weight: 600;
-            color: rgba(0, 0, 0, 0.9);
-            margin-bottom: 4px;
-        }
-
-        .profile-headline {
-            font-size: 20px;
-            color: rgba(0, 0, 0, 0.9);
-            font-weight: 400;
-            margin-bottom: 12px;
-        }
-
-        .profile-details {
-            font-size: 14px;
-            color: rgba(0, 0, 0, 0.6);
-            margin-bottom: 8px;
-        }
-
-        .profile-details span {
-            margin-right: 8px;
-        }
-
-        /* About Section */
-        .about-section {
-            padding: 24px;
-        }
-
-        .section-title {
-            font-size: 20px;
-            font-weight: 600;
-            color: rgba(0, 0, 0, 0.9);
-            margin-bottom: 8px;
-        }
-
-        .about-content {
-            font-size: 14px;
-            line-height: 1.6;
-            color: rgba(0, 0, 0, 0.9);
-            white-space: pre-line;
-        }
-
-        /* Experience Section */
-        .experience-section {
-            padding: 24px;
-        }
-
-        .experience-item {
-            display: flex;
-            margin-bottom: 24px;
-            padding-bottom: 24px;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-        }
-
-        .experience-item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-
-        .experience-icon {
-            width: 48px;
-            height: 48px;
-            background: #f3f2ef;
-            border-radius: 4px;
-            margin-right: 12px;
-            flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-        }
-
-        .experience-content {
-            flex: 1;
-        }
-
-        .experience-title {
-            font-size: 16px;
-            font-weight: 600;
-            color: rgba(0, 0, 0, 0.9);
-            margin-bottom: 4px;
-        }
-
-        .experience-company {
-            font-size: 14px;
-            color: rgba(0, 0, 0, 0.6);
-            margin-bottom: 4px;
-        }
-
-        .experience-date {
-            font-size: 12px;
-            color: rgba(0, 0, 0, 0.6);
-            margin-bottom: 8px;
-        }
-
-        .experience-description {
-            font-size: 14px;
-            color: rgba(0, 0, 0, 0.9);
-            line-height: 1.6;
-            margin-bottom: 12px;
-        }
-
-        .experience-description ul {
-            margin-left: 20px;
-            margin-top: 8px;
-        }
-
-        .experience-description li {
-            margin-bottom: 4px;
-        }
-
-        .experience-link {
-            display: inline-block;
-            color: #0073b1;
-            text-decoration: none;
-            font-size: 14px;
-            margin: 4px 0;
-        }
-
-        .experience-link:hover {
-            text-decoration: underline;
-        }
-
-        /* Skills */
-        .skills-section {
-            padding: 24px;
-        }
-
-        .skills-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 12px;
-        }
-
-        .skill-tag {
-            background: rgba(0, 115, 177, 0.08);
-            color: #0073b1;
-            padding: 8px 12px;
-            border-radius: 16px;
-            font-size: 14px;
-            font-weight: 600;
-            border: 1px solid transparent;
-            transition: all 0.2s;
-        }
-
-        .skill-tag:hover {
-            background: rgba(0, 115, 177, 0.12);
-            border-color: #0073b1;
-        }
-
-        /* Tech Stack */
-        .tech-stack {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-top: 8px;
-        }
-
-        .tech-badge {
-            background: white;
-            color: rgba(0, 0, 0, 0.6);
-            padding: 4px 10px;
-            border-radius: 12px;
-            font-size: 12px;
-            border: 1px solid rgba(0, 0, 0, 0.15);
-            font-weight: 500;
-        }
-
-        .divider {
-            height: 1px;
-            background: rgba(0, 0, 0, 0.08);
-            margin: 24px 0;
-        }
-
-        /* Highlight Box */
-        .highlight-box {
-            background: #f3f2ef;
-            border-radius: 8px;
-            padding: 16px;
-            margin: 12px 0;
-        }
-
-        .highlight-box strong {
-            color: rgba(0, 0, 0, 0.9);
-            display: block;
-            margin-bottom: 8px;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .container {
-                padding: 0;
+            #loading img {
+                animation: loading01 infinite;
+                animation-duration: 4.5s;
+                animation-timing-function: linear;
+                position: relative;
+                top: 45%;
+                width: 45px;
             }
 
-            .card {
-                border-radius: 0;
-                margin-bottom: 8px;
+        @keyframes loading01 {
+            0% {
+                transform: rotateY(0deg);
             }
 
-            .profile-info {
-                padding: 0 16px 16px 16px;
-            }
-
-            .about-section,
-            .experience-section,
-            .skills-section {
-                padding: 16px;
-            }
-
-            .profile-name {
-                font-size: 24px;
-            }
-
-            .profile-headline {
-                font-size: 16px;
+            100% {
+                transform: rotateY(720deg);
             }
         }
 
-        /* LinkedIn Top Bar */
-        .linkedin-nav {
-            background: white;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-            padding: 0;
-            margin-bottom: 24px;
-            position: sticky;
-            top: 0;
-            z-index: 100;
+        input:focus::-webkit-input-placeholder {
+            color: transparent;
         }
 
-        .nav-content {
-            max-width: 1128px;
-            margin: 0 auto;
-            padding: 8px 24px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
+        input:focus:-moz-placeholder {
+            color: transparent;
+        }
+        /* FF 4-18 */
+        input:focus::-moz-placeholder {
+            color: transparent;
+        }
+        /* FF 19+ */
+        input:focus:-ms-input-placeholder {
+            color: transparent;
+        }
+        /* IE 10+ */
+
+
+        textarea:focus::-webkit-input-placeholder {
+            color: transparent;
         }
 
-        .linkedin-logo {
-            font-size: 32px;
-            color: #0077b5;
-            font-weight: 700;
+        textarea:focus:-moz-placeholder {
+            color: transparent;
+        }
+        /* FF 4-18 */
+        textarea:focus::-moz-placeholder {
+            color: transparent;
+        }
+        /* FF 19+ */
+        textarea:focus:-ms-input-placeholder {
+            color: transparent;
+        }
+        /* IE 10+ */
+
+
+    </style>
+
+    <style type="text/css">
+        .mobile_ver {
+            display: none;
         }
 
-        .nav-title {
-            font-size: 16px;
-            color: rgba(0, 0, 0, 0.6);
+        @media (max-width:900px) {
+            .mobile_ver {
+                display: block;
+            }
+
+            .pc_ver {
+                display: none;
+            }
+        }
+        
+        /* 動畫基礎樣式 - 確保動畫能正常運作 */
+        .animated {
+            -webkit-animation-duration: 1s !important;
+            animation-duration: 1s !important;
+            -webkit-animation-fill-mode: both !important;
+            animation-fill-mode: both !important;
+            -webkit-animation-timing-function: ease-out !important;
+            animation-timing-function: ease-out !important;
+        }
+        
+        /* 確保 hidden1 元素初始隱藏 */
+        .hidden1 {
+            opacity: 0 !important;
+            visibility: hidden !important;
+        }
+        
+        /* 當動畫觸發時，元素可見 */
+        .hidden1.visible {
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+        
+        /* 確保標題可見，但允許動畫 */
+        .titportfolio.post.hidden1,
+        .titnine.post.hidden1,
+        .titpast.post.hidden1,
+        .titcontact.post.hidden1 {
+            /* 保持 hidden1 以便動畫觸發，但確保內容可見 */
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        /* 當動畫觸發後，確保元素可見 */
+        .titportfolio.post.visible.animated,
+        .titnine.post.visible.animated,
+        .titpast.post.visible.animated,
+        .titcontact.post.visible.animated,
+        
+        /* 確保醫療團隊內容在動畫類添加後可見 */
+        .nine-content .item.item-fadeInLeft,
+        .nine-content .item2.item-fadeInLeft2,
+        .nine-content .item3.item-fadeInLeft3,
+        .nine-content .item4.item-fadeInLeft4,
+        .nine-content .item5.item-fadeInLeft5,
+        .nine-content .item6.item-fadeInLeft6,
+        .nine-content .item7.item-fadeInLeft7,
+        .nine-content .item8.item-fadeInLeft8,
+        .nine-content .item9.item-fadeInLeft9,
+        .nine-content .item10.item-fadeInLeft10 {
+            opacity: 1 !important;
+            visibility: visible !important;
+            transform: scale(1) !important;
+        }
+        
+        /* 醫療團隊項目初始狀態 - 隱藏並等待動畫 */
+        .nine-content .item2,
+        .nine-content .item3,
+        .nine-content .item4,
+        .nine-content .item5,
+        .nine-content .item6,
+        .nine-content .item7,
+        .nine-content .item8,
+        .nine-content .item9,
+        .nine-content .item10 {
+            opacity: 0 !important;
+            transform: scale(0.5) !important;
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out !important;
+        }
+        
+        /* 當動畫類添加後，顯示元素 */
+        .nine-content .item2.item-fadeInLeft2,
+        .nine-content .item3.item-fadeInLeft3,
+        .nine-content .item4.item-fadeInLeft4,
+        .nine-content .item5.item-fadeInLeft5,
+        .nine-content .item6.item-fadeInLeft6,
+        .nine-content .item7.item-fadeInLeft7,
+        .nine-content .item8.item-fadeInLeft8,
+        .nine-content .item9.item-fadeInLeft9,
+        .nine-content .item10.item-fadeInLeft10 {
+            opacity: 1 !important;
+            transform: scale(1) !important;
+        }
+        
+        /* 確保文字內容始終可見 */
+        .nine-content .nine-text {
+            opacity: 1 !important;
+            visibility: visible !important;
+            display: block !important;
+        }
+        
+        /* 確保圖片和標題可見 */
+        .nine-content .nine-icon,
+        .nine-content .nine-sub {
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+        .post.visible.animated,
+        .post1.visible.animated,
+        .post2.visible.animated,
+        .post3.visible.animated,
+        .post4.visible.animated,
+        .post5.visible.animated,
+        .post6.visible.animated,
+        .post7.visible.animated,
+        .post8.visible.animated,
+        .post9.visible.animated {
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+        
+        /* 院所環境圖片動畫 - 確保動畫正常運作 */
+        .portfolio-img.post1,
+        .portfolio-img.post2,
+        .portfolio-img.post3,
+        .portfolio-img.post4,
+        .portfolio-img.post5,
+        .portfolio-img.post6,
+        .portfolio-img.post7,
+        .portfolio-img.post8,
+        .portfolio-img.post9 {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .portfolio-img.post1.visible.animated,
+        .portfolio-img.post2.visible.animated,
+        .portfolio-img.post3.visible.animated,
+        .portfolio-img.post4.visible.animated,
+        .portfolio-img.post5.visible.animated,
+        .portfolio-img.post6.visible.animated,
+        .portfolio-img.post7.visible.animated,
+        .portfolio-img.post8.visible.animated,
+        .portfolio-img.post9.visible.animated {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+        
+        /* 左側和右側淡入動畫 */
+        .leftin.visible.animated,
+        .leftin1.visible.animated,
+        .leftin2.visible.animated,
+        .leftin3.visible.animated,
+        .rightin.visible.animated,
+        .rightin1.visible.animated,
+        .rightin2.visible.animated,
+        .rightin3.visible.animated {
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+        
+        .titportfolio h2,
+        .titportfolio h2 span,
+        .titnine h2,
+        .titnine h3,
+        .titpast h2,
+        .titpast h3,
+        .titcontact p,
+        .titcontact a {
+            display: block !important;
+        }
+        
+        /* titcontact 樣式定義 */
+        .titcontact {
+            text-align: center;
+            color: #fff !important;
+            font-size: 22px;
+            margin-bottom: 20px;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+        
+        .titcontact.post {
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+        
+        .titcontact p {
+            color: #fff !important;
+            font-size: 22px;
+            margin-bottom: 20px;
+            opacity: 1 !important;
+            visibility: visible !important;
+            display: block !important;
+        }
+        
+        .titcontact a {
+            color: #fff !important;
+            text-decoration: underline !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+        
+        /* contact 區塊背景和顯示 */
+        .contact {
+            background: linear-gradient(135deg, #544185 0%, #8e4185 100%) !important;
+            background: -moz-linear-gradient(top, rgba(84,65,133,1) 0%, rgba(142,65,133,1) 100%) !important;
+            background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(84,65,133,1)), color-stop(100%, rgba(142,65,133,1))) !important;
+            background: -webkit-linear-gradient(top, rgba(84,65,133,1) 0%, rgba(142,65,133,1) 100%) !important;
+            background: -o-linear-gradient(top, rgba(84,65,133,1) 0%, rgba(142,65,133,1) 100%) !important;
+            background: -ms-linear-gradient(top, rgba(84,65,133,1) 0%, rgba(142,65,133,1) 100%) !important;
+            background: linear-gradient(to bottom, rgba(84,65,133,1) 0%, rgba(142,65,133,1) 100%) !important;
+            min-height: 200px;
+            padding: 80px 0 !important;
+        }
+        
+        .contact .container {
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+        
+        .contact p.titcontact,
+        .contact .titcontact,
+        .contact p {
+            opacity: 1 !important;
+            visibility: visible !important;
+            display: block !important;
+            color: #fff !important;
+            text-align: center !important;
+            font-size: 22px !important;
+            margin-bottom: 20px !important;
+        }
+        
+        .contact .titcontact a,
+        .contact p a {
+            color: #fff !important;
+            text-decoration: underline !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+            display: inline !important;
+        }
+        
+        /* 確保 contact 區塊本身可見 */
+        section:has(.contact) {
+            opacity: 1 !important;
+            visibility: visible !important;
         }
     </style>
+
+    <script type="text/javascript">
+        function loadScript(url, callback) {
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async = true;
+            if (script.readyState) {
+                script.onreadystatechange = function () {
+                    if (script.readyState == "loaded" || script.readyState == "complete") {
+                        script.onreadystatechange = null;
+                        if (callback && typeof callback === "function") {
+                            callback();
+                        }
+                    }
+                };
+            } else {
+                script.onload = function () {
+                    if (callback && typeof callback === "function") {
+                        callback();
+                    }
+                };
+                script.onerror = function() {
+                    // 載入失敗時也執行 callback，讓備用方案可以啟動
+                    if (callback && typeof callback === "function") {
+                        callback();
+                    }
+                };
+            }
+            script.src = url;
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+        }
+
+        // How to use it - 等待 jQuery 載入完成
+        (function() {
+            function initPage() {
+                if (typeof jQuery !== 'undefined') {
+                    // jQuery was loaded
+                    jQuery(document).ready(function() {
+                        // 移除 loading
+                        jQuery("#loading").delay(300).fadeOut(function () {
+                            jQuery("#loading").remove();
+                        });
+
+                    loadScript("//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.0/imagesloaded.pkgd.min.js");
+                    loadScript("//cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.0/jquery.waypoints.min.js");
+                });
+                }
+            }
+            
+            // 檢查 jQuery 是否已載入
+            if (typeof jQuery !== 'undefined') {
+                initPage();
+            } else {
+                // 等待 jQuery 載入
+                var checkCount = 0;
+                var checkInterval = setInterval(function() {
+                    checkCount++;
+                    if (typeof jQuery !== 'undefined') {
+                        clearInterval(checkInterval);
+                        initPage();
+                    } else if (checkCount > 50) {
+                        // 5 秒後仍失敗，強制移除 loading
+                        clearInterval(checkInterval);
+                        var loadingEl = document.getElementById('loading');
+                        if (loadingEl) {
+                            loadingEl.style.display = 'none';
+                            loadingEl.remove();
+                        }
+                    }
+                }, 100);
+            }
+            
+            // 最終備用方案：如果 5 秒後仍未載入，強制移除 loading
+            setTimeout(function() {
+                var loadingEl = document.getElementById('loading');
+                if (loadingEl) {
+                    if (typeof jQuery !== 'undefined') {
+                        jQuery(loadingEl).fadeOut(function() {
+                            jQuery(this).remove();
+                        });
+                    } else {
+                        loadingEl.style.display = 'none';
+                        loadingEl.remove();
+                    }
+                }
+            }, 5000);
+        })();
+        
+        // loadCSS 函數已內嵌在頁面中
+    </script>
+
+
 </head>
 <body>
-    <!-- LinkedIn Navigation -->
-    <div class="linkedin-nav">
-        <div class="nav-content">
-            <div class="linkedin-logo">in</div>
-            <div class="nav-title">履歷檔案</div>
-        </div>
+    <div id="loading">
+        <img src="images/loading_logo.png">
     </div>
 
-    <div class="container">
-        <!-- Profile Header Card -->
-        <div class="card profile-header">
-            <div class="cover-photo"></div>
-            <div class="profile-info">
-                <div class="profile-avatar">文</div>
-                <div class="profile-content">
-                    <h1 class="profile-name">文政</h1>
-                    <div class="profile-headline">全端工程師 | 17年網站設計經驗</div>
-                    <div class="profile-details">
-                        <span>📍 台灣</span>
-                        <span>•</span>
-                        <span>🎓 中山醫學大學 醫務管理學系</span>
+
+    <header class="top is-hidden">
+        <nav class="navbar-fixed-top nav navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+
+                    <div class="hamburger-btn hamburger hamburger--squeeze">
+                        <div class="hamburger-box">
+                            <div class="hamburger-inner"></div>
+                        </div>
                     </div>
-                    <div class="profile-details">
-                        <span>🌐 作品集：<a href="http://52.197.196.28/" style="color: #0073b1; text-decoration: none;">http://52.197.196.28/</a></span>
+                    <div class="logo logo-area">
+                        <a href="#">
+                            <img class="white-logo" alt="鉅豐logo1" title="牙醫診所" src="images/logo-white.png">
+                        </a>
+                        <a href="#">
+                            <img class="black-logo visible-lg visible-md" alt="鉅豐logo2" title="牙醫診所" src="images/logo_blk.png">
+                        </a>
+                        <a href="tel:04-25243313" class="hidden-lg hidden-md logo-phone" style="color:#abcd03;font-size:16px;">
+                            04-25243313<br />04-25262662
+                        </a>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="action-close">
+                    <ul class="menu-bg nav navbar-nav">
+                        <li><a class="visible-xs" href="#">首頁</a></li>
+                        <li><a href="#">簡介</a></li>
+                        <li><a href="#service">醫療團隊</a></li>
+                        <li><a href="#cost">診療項目</a></li>
+                        <li><a href="https://www.facebook.com/jufendent/" target="_blank">最新公告</a></li>
+                        <li><a href="#link">聯絡我們</a></li>
+                        <div class="clearfix"></div>
+                    </ul>
+                    <div class="clearfix hidden-lg"></div>
+                </div>
+
+                <div class="tel-number">
+
+                    <a href="javascript:void(0);">（04）2524-3313</a>
+                </div>
+            </div>
+        </nav>
+        <div class="clearfix"></div>
+    </header>
+
+    <main>
+
+
+        <!-- BANNER -->
+
+        <div class="banner round-bg" style="background-image: url(images/about/bg.jpg);background-position: center center;">
+            <div class="container">
+                <div class="banner-text">
+                    <div class="banner-t1 animated fadeInUp">
+                        <!--<h3 style="letter-spacing:1px;font-weight:600">鉅豐<span style="color:#f7a118;font-style: italic;"> 1,2345 </span>牙醫診所</h3>-->
+                        <div style="padding-top:20px;"></div>
+                        <h2 class="titstyle01" title="豐原鉅豐牙醫診所top1">鉅豐牙醫。具有專業牙醫師陣容， 除提供一般牙科治療</h2>
+                        <h3 class="titstyle02" title="豐原鉅豐牙醫診所top2">提供專業齒顎矯正、人工植牙、美白貼片、全瓷冠、全口重建 鉅豐的用心～</h3>
+                        <h3 class="titstyle02" title="豐原鉅豐牙醫診所top3">絕對是你最好的選擇！！</h3>
+                        <h3 class="titstyle02" title="豐原鉅豐牙醫診所top4">***晚診六點即為您服務</h3>
+                    </div>
+                    <a href="https://www.facebook.com/jufendent/" target="_blank"><button class="btn01 animated fadeInUp visible-lg" id="btn-down" title="牙醫診所">了解更多</button></a>
+                </div>
+            </div>
+
+
+        </div>
+
+
+        <!-- program -->
+        <section id="section1">
+            <div class="program">
+                <div class="container">
+                    <div class="col-md-12 program-bottom">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 bottom-left leftin">
+                                <h2 class="subtitle02" title="豐原鉅豐牙醫診所服務">經營理念</h2>
+
+                                <h2 class="maintitle02" title="豐原鉅豐牙醫診所服務"><span>鉅豐</span>牙醫診所</h2>
+
+                                <p class="text01">
+                                    鉅豐牙醫診所提供的不僅僅只是一般牙科治療，而是正確觀念的傳達與建立。在鉅豐牙醫診所，
+                                    牙周病手術、人工植牙等問題都可以透過高科技與新技術、快速、確實的得到解決，免除您對治
+                                    療的不安及疑慮。</br></br>
+
+                                    透過德國西門子數位化X光儀的分析，口腔中的問題能精確地顯示在銀幕上，再加上專業專科醫
+                                    師的解說，您可以清楚了解口腔病況，確實掌握治療先機。</br></br>
+
+                                    鉅豐的人工植牙手術是在無菌開刀房內施行，採用臨床上最先進的技術及口腔親和性最佳的德國
+                                    FRIALIT-2植牙系統，能有效避免二次感染，鉅豐牙醫診所將是您植牙的最佳選擇。</br></br>
+
+                                    根據研究數據顯示，一般成年人中有高達九成以上患有各種不同程度的牙周病問題。</br></br>
+
+                                    除了定期洗牙治療外，更可透過高精密儀器的檢查，深入了解其嚴重性，進而進行階段性的治療
+                                    。鉅豐牙醫診所推出的無痛牙周雷射治療，可將療程大幅縮短到兩週，並有效地改善您惱人的口
+                                    臭、牙肉持續萎縮、牙齒鬆動及咀嚼無力等症狀，達到徹底根治的目標。</br></br>
+
+                                    如果您希望快速擁有一口潔白貝齒，又不想接受漫長的療程，本院擁有最先進的德國CERC3電腦
+                                    鑲瓷設備，透過立體掃描圖像取得牙齒三度空間結構後，再將最接近琺瑯材質的瓷塊切割，運用
+                                    活性介面劑為牙齒做最完美的結合，讓您綻露笑容不留痕跡，輕鬆擁有最完美的微笑曲線。</br></br>
+
+                                    鉅豐引進美國BRITE SMILE優美白冷光美白機，最安全、美白效果最好，讓您『美』的得天獨厚、
+                                    『白』 的晶瑩剔透。
+
+                                </p>
+                            </div>
+
+                            <div class="col-md-5 col-md-offset-1 bottom-right col-sm-6 rightin hidden-xs">
+                                <img alt="豐原鉅豐牙醫診所服務" src="images/about/doctor-1.jpg" />&nbsp;<br />
+                                <h2 class="maintitle02" title="豐原鉅豐牙醫診所服務"><span>院長</span>袁璟樂&nbsp;&nbsp;醫師</h2>
+                                <p class="text01">
+                                    高雄醫學大學牙醫學士<br />
+                                    高雄醫學大學附設醫院醫師<br />
+                                    中華牙醫學會會員<br />
+                                    中華民國牙醫師公會 全國聯合會醫事評鑑委員<br />
+                                    中華民國牙醫師公會 全國聯合會法令制度委員<br />
+                                    全民健保牙醫門診總額執行委員<br />
+                                    國際電腦牙醫學會3D齒雕會員<br />
+                                    國際口腔電身學會會員<br />
+                                    中華民國口腔審美協會會員<br />
+                                </p>
+                                <div class="clearfix">&nbsp;</div>
+                            </div>
+
+                            <div class="col-md-5 col-md-offset-1 bottom-right post visible-xs">
+                                <!--<img alt="豐原鉅豐牙醫診所服務" src="images/about/0.jpg" />-->
+                                <div class="clearfix">&nbsp;</div>
+
+                                <div style="font-size: 26px;font-weight: 600;margin-top: 20px;"><span style="color: #abcd03">鉅豐</span>牙醫診所</div>
+                                <p class="text01">鉅豐牙醫。具有專業牙醫師陣容， 除提供一般牙科治療~ 並提供專業齒顎矯正、人工植牙、美白貼片、全瓷冠、全口重建 鉅豐的用心～絕對是你最好的選擇！！</p>
+                                <!--<a class="12" href="/project.html"> <span class="button">更多</span> </a>-->
+                            </div>
+
+                            <div class="clearfix">&nbsp;</div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- About Card -->
-        <div class="card">
-            <div class="about-section">
-                <h2 class="section-title">關於</h2>
-                <div class="about-content">大學就讀中山醫學大學醫務管理學系，自接下系上的網站，開始了不務正業的程式人生。
+        <!-- portfolio -->
+        <section id="section2">
+            <div class="portfolio">
+                <div class="container">
 
-目前任職全端，偶爾協助 Azure、AWS 設定。下班與假日斜槓中，不敢說是資深工程師，但可用 17 年的網站設計經驗，解決客戶的林林總總。
+                    <h2 title="院所環境" class="titportfolio post"><span>院所環境</span></h2>
 
-擅長 .NET 生態系統開發，具備政府標案、企業系統、博弈產業、IoT 應用等跨領域經驗。熟悉雲端架構（AWS、Azure）、Bot 開發（Line Bot、Telegram Bot）、即時通訊（SignalR、MQTT）以及機器學習應用。</div>
-            </div>
-        </div>
-
-        <!-- Experience Card -->
-        <div class="card">
-            <div class="experience-section">
-                <h2 class="section-title">經歷</h2>
-
-                <div class="experience-item">
-                    <div class="experience-icon">💼</div>
-                    <div class="experience-content">
-                        <div class="experience-title">Line 遊戲投注、後台報表</div>
-                        <div class="experience-company">全端工程師</div>
-                        <div class="experience-date">2022年</div>
-                        <div class="experience-description">
-                            • 開發 Line 遊戲投注系統及後台報表功能<br>
-                            • 使用 Python 爬取開獎資料進行數據整合<br>
-                            • 整合第三方金流 API 與 Google Authenticator 雙因素驗證
+                    <div class="row portfolio-content">
+                        <div class="col-md-4 col-sm-6 portfolio-img post1">
+                            <div class="portfolio-container">
+                                <img src="images/about/1.jpg" width="100%" />
+                            </div>
                         </div>
-                        <a href="http://52.197.196.28/2022.html" class="experience-link" target="_blank">查看專案 →</a>
-                        <div class="tech-stack">
-                            <span class="tech-badge">AWS</span>
-                            <span class="tech-badge">ASP.NET MVC</span>
-                            <span class="tech-badge">C#</span>
-                            <span class="tech-badge">MS SQL</span>
-                            <span class="tech-badge">Python</span>
-                            <span class="tech-badge">Line Bot</span>
-                            <span class="tech-badge">金流API</span>
+                        <div class="col-md-4 col-sm-6 portfolio-img post2">
+                            <div class="portfolio-container">
+                                <img src="images/about/2.jpg" width="100%" />
+                            </div>
                         </div>
+                        <div class="col-md-4 col-sm-6 portfolio-img post3">
+                            <div class="portfolio-container">
+                                <img src="images/about/3.jpg" width="100%" />
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 portfolio-img post4">
+                            <div class="portfolio-container">
+                                <img src="images/about/4.jpg" width="100%" />
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 portfolio-img post5">
+                            <div class="portfolio-container">
+                                <img src="images/about/5.jpg" width="100%" />
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 portfolio-img post6">
+                            <div class="portfolio-container">
+                                <img src="images/about/6.jpg" width="100%" />
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 portfolio-img post7">
+                            <div class="portfolio-container">
+                                <img src="images/about/7.jpg" width="100%" />
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 portfolio-img post8">
+                            <div class="portfolio-container">
+                                <img src="images/about/8.jpg" width="100%" />
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 portfolio-img post9">
+                            <div class="portfolio-container">
+                                <img src="images/about/9.jpg" width="100%" />
+                            </div>
+                        </div>
+
+                        <div class="clearfix"></div>
+                        <div class="portfolio-btn">
+                            <!--<a href="#"><button type="button" class="hover" title="聯絡牙醫診所">我要預約</button></a>-->
+                            <a href="#link"><button type="button" class="" title="豐原鉅豐牙醫診所">我要預約</button></a>
+                            <div class="clearfix"></div>
+                            <!-- <div class="under-bg2"></div> -->
+                        </div>
+                        <div class="clearfix"></div>
                     </div>
-                </div>
 
-                <div class="experience-item">
-                    <div class="experience-icon">🤖</div>
-                    <div class="experience-content">
-                        <div class="experience-title">Telegram 簽到、請假系統 & 簽核系統</div>
-                        <div class="experience-company">全端工程師</div>
-                        <div class="experience-date">2021年</div>
-                        <div class="experience-description">
-                            • 開發 Telegram 簽到、請假與簽核系統<br>
-                            • 實作 SSO 串接 EIP 核實登入功能
-                        </div>
-                        <a href="http://52.197.196.28/2021.html" class="experience-link" target="_blank">查看專案 →</a>
-                        <div class="tech-stack">
-                            <span class="tech-badge">AWS</span>
-                            <span class="tech-badge">Telegram Bot</span>
-                            <span class="tech-badge">SSO</span>
-                            <span class="tech-badge">ASP.NET MVC</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="experience-item">
-                    <div class="experience-icon">🧠</div>
-                    <div class="experience-content">
-                        <div class="experience-title">影像辨識後自動下單外掛</div>
-                        <div class="experience-company">Python 開發工程師</div>
-                        <div class="experience-date">2021年</div>
-                        <div class="experience-description">
-                            • 使用機器學習技術進行影像辨識<br>
-                            • 開發自動化下單外掛程式
-                        </div>
-                        <a href="http://52.197.196.28/image/2021/04.jpg" class="experience-link" target="_blank">查看截圖 →</a>
-                        <div class="tech-stack">
-                            <span class="tech-badge">Python</span>
-                            <span class="tech-badge">Machine Learning</span>
-                            <span class="tech-badge">Qt5</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="experience-item">
-                    <div class="experience-icon">🏢</div>
-                    <div class="experience-content">
-                        <div class="experience-title">鼎新 上海澳盛</div>
-                        <div class="experience-company">全端工程師</div>
-                        <div class="experience-date">2020年</div>
-                        <div class="tech-stack">
-                            <span class="tech-badge">AngularJS</span>
-                            <span class="tech-badge">.NET</span>
-                            <span class="tech-badge">MS SQL</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="experience-item">
-                    <div class="experience-icon">📱</div>
-                    <div class="experience-content">
-                        <div class="experience-title">研華 電子白板 (IoT應用)</div>
-                        <div class="experience-company">全端工程師</div>
-                        <div class="experience-date">2018年 - 2020年</div>
-                        <div class="experience-description">
-                            • 開發 IoT 電子白板應用系統<br>
-                            • 實作即時通訊功能（SignalR）與 MQTT 協議整合
-                        </div>
-                        <a href="http://52.197.196.28/2020.html" class="experience-link" target="_blank">查看專案 →</a>
-                        <div class="tech-stack">
-                            <span class="tech-badge">.NET Core</span>
-                            <span class="tech-badge">SignalR</span>
-                            <span class="tech-badge">MQTT</span>
-                            <span class="tech-badge">WinForm</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="experience-item">
-                    <div class="experience-icon">👨‍💼</div>
-                    <div class="experience-content">
-                        <div class="experience-title">專案經理</div>
-                        <div class="experience-company">新陽電腦</div>
-                        <div class="experience-date">2012年 - 2018年 · 6 年</div>
-                        <div class="highlight-box">
-                            <strong>職責範圍</strong>
-                            負責專案全生命週期管理：公告、投標、專案啟動、審查驗收、需求訪談、系統分析、排定專案成員達成階段目標、教育訓練至專案驗收。期間也協助實踐大學教務與 IBM 的系統程式開發。
-                        </div>
-                        <div class="experience-description">
-                            <strong>主要承接政府與企業專案：</strong><br>
-                            • 醫療院所預防保健服務系統單一入口<br>
-                            • 衛生福利部國民健康署官網<br>
-                            • 臺灣急救教育推廣與諮詢中心<br>
-                            • 華航航務訓練管理資訊系統（IPTS）<br>
-                            • 衛生福利部國民健康署新聞專區維護計畫<br>
-                            • 健康體重管理資訊網功能擴充及維護
-                        </div>
-                        <a href="https://www.hpa.gov.tw/" class="experience-link" target="_blank">查看國健署官網 →</a>
-                        <a href="http://www.cpr.org.tw" class="experience-link" target="_blank">查看急救中心網站 →</a>
-                    </div>
-                </div>
-
-                <div class="experience-item">
-                    <div class="experience-icon">🎮</div>
-                    <div class="experience-content">
-                        <div class="experience-title">遊戲官網開發工程師</div>
-                        <div class="experience-company">向上遊戲（XSG）</div>
-                        <div class="experience-date">2011年</div>
-                        <div class="experience-description">
-                            負責向上遊戲官網、老子有錢官網開發
-                        </div>
-                        <a href="https://www.xsgames.com/" class="experience-link" target="_blank">查看官網 →</a>
-                    </div>
-                </div>
-
-                <div class="experience-item">
-                    <div class="experience-icon">🎮</div>
-                    <div class="experience-content">
-                        <div class="experience-title">軟體工程師</div>
-                        <div class="experience-company">天下遊戲（目前的九州）</div>
-                        <div class="experience-date">2007年 - 2010年 · 3 年</div>
-                        <div class="experience-description">
-                            曾配合需要至大陸東北瀋陽任職
-                        </div>
-                        <a href="https://www.ts775.com.tw/" class="experience-link" target="_blank">查看官網 →</a>
-                    </div>
-                </div>
-
-                <div class="experience-item">
-                    <div class="experience-icon">🍺</div>
-                    <div class="experience-content">
-                        <div class="experience-title">網站開發工程師</div>
-                        <div class="experience-company">Pub 網站專案</div>
-                        <div class="experience-date">2006年 - 2007年 · 1 年</div>
-                        <div class="experience-description">
-                            獅子王pub、曼波king pub、阿曼king pub 等網站開發
-                        </div>
-                        <a href="http://www.amanking.com.tw/" class="experience-link" target="_blank">查看網站 →</a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <!-- Skills Card -->
-        <div class="card">
-            <div class="skills-section">
-                <h2 class="section-title">技能</h2>
-                <div class="skills-list">
-                    <span class="skill-tag">ASP.NET MVC</span>
-                    <span class="skill-tag">.NET Core</span>
-                    <span class="skill-tag">C#</span>
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">MS SQL</span>
-                    <span class="skill-tag">AWS</span>
-                    <span class="skill-tag">Azure</span>
-                    <span class="skill-tag">HTML5</span>
-                    <span class="skill-tag">jQuery</span>
-                    <span class="skill-tag">AngularJS</span>
-                    <span class="skill-tag">Bootstrap</span>
-                    <span class="skill-tag">Line Bot</span>
-                    <span class="skill-tag">Telegram Bot</span>
-                    <span class="skill-tag">SignalR</span>
-                    <span class="skill-tag">MQTT</span>
-                    <span class="skill-tag">Machine Learning</span>
-                    <span class="skill-tag">Git</span>
-                    <span class="skill-tag">API 整合</span>
-                    <span class="skill-tag">SSO</span>
-                    <span class="skill-tag">WinForm</span>
-                    <span class="skill-tag">專案管理</span>
-                    <span class="skill-tag">需求分析</span>
-                    <span class="skill-tag">政府標案</span>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Industry Experience Card -->
-        <div class="card">
-            <div class="skills-section">
-                <h2 class="section-title">產業經驗</h2>
-                <div class="experience-description">
-                    <strong>🏥 醫療產業</strong><br>
-                    衛福部、國健署專案 • 醫療院所系統 • 牙醫診所網站
-                </div>
-                <div class="divider"></div>
-                <div class="experience-description">
-                    <strong>🏢 企業系統</strong><br>
-                    華航 IPTS 系統 • 實踐大學教務系統 • IBM 系統開發 • 鼎新 ERP 相關
-                </div>
-                <div class="divider"></div>
-                <div class="experience-description">
-                    <strong>🎮 博弈產業</strong><br>
-                    向上遊戲 • 天下遊戲（九州）• Line 遊戲投注系統
-                </div>
-                <div class="divider"></div>
-                <div class="experience-description">
-                    <strong>📱 IoT 應用</strong><br>
-                    研華電子白板 • 即時通訊整合 • MQTT 協議應用
+
+
+        <!-- 六大特色 -->
+        <section id="section4">
+            <div class="nine hidden-xs">
+                <div class="container">
+                    <a name="service" title="">
+                        <div class="titnine post">
+                            <h2 title="豐原鉅豐牙醫診所的醫療團隊">醫療團隊</h2>
+                            <h3>由我們的專業 為您把關</h3>
+                        </div>
+                    </a>
+                    <div class="nine-content">
+                        <div class="item2 col-md-4 col-sm-4 col-xs-6">
+                            <div class="row">
+                                <div class="col-md-3 nine-icon"><img alt="豐原鉅豐牙醫診所特色一" src="images/user-default_2.png"></div>
+                                <div class="col-md-9 nine-sub">袁璟樂 醫師</div>
+                                <div class="col-md-9 col-md-offset-3 nine-text">
+                                    高雄醫學大學牙醫學士<br />
+                                    高學醫學大學附設醫院醫師<br />
+                                    中華牙醫學會會員<br />
+                                    牙醫師公會 全國聯合會醫事評鑑委員<br />
+                                    牙醫師公會 全國聯合會法令制度委員<br />
+                                    全民健邱牙醫門診總額執行委員<br />
+                                    國際電腦牙醫學會3D齒雕會員<br />
+                                    國際口腔電身學會會員<br />
+                                    中華民國口腔審美協會會員<br />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item3 col-md-4 col-sm-4 col-xs-6">
+                            <div class="row">
+                                <div class="col-md-3 nine-icon"><img alt="豐原鉅豐牙醫診所特色二" src="images/user-default_2.png"></div>
+                                <div class="col-md-9 nine-sub">魏士富 醫師</div>
+                                <div class="col-md-9 col-md-offset-3 nine-text">
+                                    高雄醫學大學牙醫學士<br />
+                                    門諾醫院矯正醫師<br />
+                                    光田綜合醫院矯正醫師<br />
+                                    邱綜合醫院牙科主任<br />
+                                    中華民國口腔審美協會會員<br />
+                                    中華牙醫學會會員<br />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item4 col-md-4 col-sm-4 col-xs-6">
+                            <div class="row">
+                                <div class="col-md-3 nine-icon"><img alt="豐原鉅豐牙醫診所特色三" src="images/user-default_2.png"></div>
+                                <div class="col-md-9 nine-sub">曾鴻哲 醫師</div>
+                                <div class="col-md-9 col-md-offset-3 nine-text">
+                                    台北醫學大學牙醫學士<br />
+                                    日本國立德島大學矯正科研究生<br />
+                                    日本國立德島大學附屬醫院齒顎矯正科主任<br />
+                                    四國齒科中心醫院齒顎矯正科主任<br />
+                                    中華民國牙醫師國家考試合格<br />
+                                    日本齒科醫師國家考試合格<br />
+                                    日本齒顎矯正學學會會員<br />
+                                    日本齒顎矯正認定醫合格<br />
+                                    日本齒顎矯正專科指導醫師合格<br />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item5 col-md-4 col-sm-4 col-xs-6">
+                            <div class="row">
+                                <div class="col-md-3 nine-icon"><img alt="豐原鉅豐牙醫診所特色四" src="images/user-default_2.png"></div>
+                                <div class="col-md-9 nine-sub">余忠誠 醫師</div>
+                                <div class="col-md-9 col-md-offset-3 nine-text">
+                                    台灣大學牙醫學士<br />
+                                    美國俄亥俄州州立膺復科碩士<br />
+                                    長庚醫院前總住院醫師<br />
+                                    國泰醫院前主治醫師<br />
+                                    專攻人工植牙全口重建<br />
+                                    專攻口腔外科手術<br />
+                                    專攻困難拔牙手術<br />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item6 col-md-4 col-sm-4 col-xs-6">
+                            <div class="row">
+                                <div class="col-md-3 nine-icon"><img alt="豐原鉅豐牙醫診所特色五" src="images/user-default_2.png"></div>
+                                <div class="col-md-9 nine-sub">黃裕文 醫師</div>
+                                <div class="col-md-9 col-md-offset-3 nine-text">
+                                    國防醫學院牙周病學碩士<br />
+                                    中華民國牙周病專科醫師<br />
+                                    行政院衛生署代訓牙醫師<br />
+                                    三軍總醫院牙周病學會會員<br />
+                                    光田醫院牙周病專科醫師<br />
+                                    中華牙醫學會會員<br />
+                                    國際電腦牙醫學會3D齒雕會員<br />
+                                    國際口腔雷射學會會員<br />
+                                    中華民國口腔審美協會會員<br />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item7 col-md-4 col-sm-4 col-xs-6">
+                            <div class="row">
+                                <div class="col-md-3 nine-icon"><img alt="豐原鉅豐牙醫診所特色六" src="images/user-default_2.png"></div>
+                                <div class="col-md-9 nine-sub">馬成伯 醫師</div>
+                                <div class="col-md-9 col-md-offset-3 nine-text">
+                                    中山醫學大學附設醫院總醫師<br />
+                                    慈濟醫院主治醫師<br />
+                                    中華牙醫學會會員<br />
+                                    國際電腦牙醫學會3D齒雕會員<br />
+                                    國際口腔雷射學會會員<br />
+                                    中華民國口腔審美協會會員<br /><br /><br /><br /><br />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item8 col-md-4 col-sm-4 col-xs-6">
+                            <div class="row">
+                                <div class="col-md-3 nine-icon"><img alt="豐原鉅豐牙醫診所特色七" src="images/user-default_2.png"></div>
+                                <div class="col-md-9 nine-sub">莊淑倪 醫師</div>
+                                <div class="col-md-9 col-md-offset-3 nine-text">
+                                    中山醫學大學牙醫學士<br />
+                                    台北長庚兒童牙科專科醫師<br />
+                                    基隆長庚牙科總醫師<br />
+                                    中華民國兒童牙科學會會員<br />
+                                    中華牙醫學會會員<br />
+                                    國際電腦牙醫學會3D齒雕會員<br />
+                                    國際口腔雷射學會會員<br />
+                                    中華民國口腔審美協會會員<br />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item9 col-md-4 col-sm-4 col-xs-6">
+                            <div class="row">
+                                <div class="col-md-3 nine-icon"><img alt="豐原鉅豐牙醫診所特色六" src="images/user-default_2.png"></div>
+                                <div class="col-md-9 nine-sub">呂雅鈴 醫師</div>
+                                <div class="col-md-9 col-md-offset-3 nine-text">
+                                    中國醫藥大學牙醫學士<br />
+                                    中國醫藥大學附設醫院牙醫部住院醫師<br />
+                                    台中榮民總醫院醫師<br />
+                                    中華牙醫學會會員<br />
+                                    國際電腦牙醫學會3D齒雕會員<br />
+                                    國際口腔雷射學會會員<br />
+                                    中華民國口腔審美協會會員<br />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item10 col-md-4 col-sm-4 col-xs-6">
+                            <div class="row">
+                                <div class="col-md-3 nine-icon"><img alt="豐原鉅豐牙醫診所特色七" src="images/user-default_2.png"></div>
+                                <div class="col-md-9 nine-sub">王奕凱 醫師</div>
+                                <div class="col-md-9 col-md-offset-3 nine-text">
+                                    高雄醫學大學牙醫學士<br />
+                                    高雄醫學大學附設醫院院醫師<br />
+                                    中華牙醫學會會員<br />
+                                    國際電腦牙醫學會3D齒雕會員<br />
+                                    國際口腔雷射學會會員<br />
+                                    中華民國口腔審美協會會員<br />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
                 </div>
             </div>
-        </div>
 
-    </div>
+            <div class="nine visible-xs">
+                <div class="container">
+                    <a name="service" title="">
+                        <div class="titnine post">
+                            <h2>醫療團隊</h2>
+                            <h3>由我們的專業 為您把關</h3>
+                        </div>
+                    </a>
+                    <div class="nine-content">
+                        <div class="col-md-4 col-sm-4 col-xs-6 post1">
+                            <div class="row">
+                                <div class="col-md-3 nine-icon"><img alt="豐原鉅豐牙醫診所特色一" src="images/user-default_2.png"></div>
+                                <div class="col-md-9 nine-sub">袁璟樂 醫師</div>
+                                <div class="col-md-9 col-md-offset-3 nine-text">
+                                    高雄醫學大學牙醫學士<br />
+                                    高學醫學大學附設醫院醫師<br />
+                                    中華牙醫學會會員<br />
+                                    牙醫師公會 全國聯合會醫事評鑑委員<br />
+                                    牙醫師公會 全國聯合會法令制度委員<br />
+                                    全民健邱牙醫門診總額執行委員<br />
+                                    國際電腦牙醫學會3D齒雕會員<br />
+                                    國際口腔電身學會會員<br />
+                                    中華民國口腔審美協會會員<br />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-6 post1">
+                            <div class="row">
+                                <div class="col-md-3 nine-icon"><img alt="豐原鉅豐牙醫診所特色二" src="images/user-default_2.png"></div>
+                                <div class="col-md-9 nine-sub">魏士富 醫師</div>
+                                <div class="col-md-9 col-md-offset-3 nine-text">
+                                    高雄醫學大學牙醫學士<br />
+                                    門諾醫院矯正醫師<br />
+                                    光田綜合醫院矯正醫師<br />
+                                    邱綜合醫院牙科主任<br />
+                                    中華民國口腔審美協會會員<br />
+                                    中華牙醫學會會員<br />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-6 post1">
+                            <div class="row">
+                                <div class="col-md-3 nine-icon"><img alt="豐原鉅豐牙醫診所特色三" src="images/user-default_2.png"></div>
+                                <div class="col-md-9 nine-sub">曾鴻哲 醫師</div>
+                                <div class="col-md-9 col-md-offset-3 nine-text">
+                                    台北醫學大學牙醫學士<br />
+                                    日本國立德島大學矯正科研究生<br />
+                                    日本國立德島大學附屬醫院齒顎矯正科主任<br />
+                                    四國齒科中心醫院齒顎矯正科主任<br />
+                                    中華民國牙醫師國家考試合格<br />
+                                    日本齒科醫師國家考試合格<br />
+                                    日本齒顎矯正學學會會員<br />
+                                    日本齒顎矯正認定醫合格<br />
+                                    日本齒顎矯正專科指導醫師合格<br />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-6 post1">
+                            <div class="row">
+                                <div class="col-md-3 nine-icon"><img alt="豐原鉅豐牙醫診所特色四" src="images/user-default_2.png"></div>
+                                <div class="col-md-9 nine-sub">余忠誠 醫師</div>
+                                <div class="col-md-9 col-md-offset-3 nine-text">
+                                    台灣大學牙醫學士<br />
+                                    美國俄亥俄州州立膺復科碩士<br />
+                                    長庚醫院前總住院醫師<br />
+                                    國泰醫院前主治醫師<br />
+                                    專攻人工植牙全口重建<br />
+                                    專攻口腔外科手術<br />
+                                    專攻困難拔牙手術<br />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-6 post1">
+                            <div class="row">
+                                <div class="col-md-3 nine-icon"><img alt="豐原鉅豐牙醫診所特色五" src="images/user-default_2.png"></div>
+                                <div class="col-md-9 nine-sub">黃裕文 醫師</div>
+                                <div class="col-md-9 col-md-offset-3 nine-text">
+                                    國防醫學院牙周病學碩士<br />
+                                    中華民國牙周病專科醫師<br />
+                                    行政院衛生署代訓牙醫師<br />
+                                    三軍總醫院牙周病學會會員<br />
+                                    光田醫院牙周病專科醫師<br />
+                                    中華牙醫學會會員<br />
+                                    國際電腦牙醫學會3D齒雕會員<br />
+                                    國際口腔雷射學會會員<br />
+                                    中華民國口腔審美協會會員<br />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-6 post1">
+                            <div class="row">
+                                <div class="col-md-3 nine-icon"><img alt="豐原鉅豐牙醫診所特色六" src="images/user-default_2.png"></div>
+                                <div class="col-md-9 nine-sub">馬成伯 醫師</div>
+                                <div class="col-md-9 col-md-offset-3 nine-text">
+                                    中山醫學大學附設醫院總醫師<br />
+                                    慈濟醫院主治醫師<br />
+                                    中華牙醫學會會員<br />
+                                    國際電腦牙醫學會3D齒雕會員<br />
+                                    國際口腔雷射學會會員<br />
+                                    中華民國口腔審美協會會員<br />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-6 post1">
+                            <div class="row">
+                                <div class="col-md-3 nine-icon"><img alt="豐原鉅豐牙醫診所特色七" src="images/user-default_2.png"></div>
+                                <div class="col-md-9 nine-sub">莊淑倪 醫師</div>
+                                <div class="col-md-9 col-md-offset-3 nine-text">
+                                    中山醫學大學牙醫學士<br />
+                                    台北長庚兒童牙科專科醫師<br />
+                                    基隆長庚牙科總醫師<br />
+                                    中華民國兒童牙科學會會員<br />
+                                    中華牙醫學會會員<br />
+                                    國際電腦牙醫學會3D齒雕會員<br />
+                                    國際口腔雷射學會會員<br />
+                                    中華民國口腔審美協會會員<br />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-6 post1">
+                            <div class="row">
+                                <div class="col-md-3 nine-icon"><img alt="豐原鉅豐牙醫診所特色八" src="images/user-default_2.png"></div>
+                                <div class="col-md-9 nine-sub">呂雅鈴 醫師</div>
+                                <div class="col-md-9 col-md-offset-3 nine-text">
+                                    中國醫藥大學牙醫學士<br />
+                                    中國醫藥大學附設醫院牙醫部住院醫師<br />
+                                    台中榮民總醫院醫師<br />
+                                    中華牙醫學會會員<br />
+                                    國際電腦牙醫學會3D齒雕會員<br />
+                                    國際口腔雷射學會會員<br />
+                                    中華民國口腔審美協會會員<br />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-6 post1">
+                            <div class="row">
+                                <div class="col-md-3 nine-icon"><img alt="豐原鉅豐牙醫診所特色九" src="images/user-default_2.png"></div>
+                                <div class="col-md-9 nine-sub">王奕凱 醫師</div>
+                                <div class="col-md-9 col-md-offset-3 nine-text">
+                                    高雄醫學大學牙醫學士<br />
+                                    高雄醫學大學附設醫院院醫師<br />
+                                    中華牙醫學會會員<br />
+                                    國際電腦牙醫學會3D齒雕會員<br />
+                                    國際口腔雷射學會會員<br />
+                                    中華民國口腔審美協會會員<br />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="sect1 post2">
+            <div class="container">
+                <ul class="news-list">
+                    <li class="item">
+                        <a class="box clearfix" name="cost" title="">
+                            <!--預設圖大小 (w=385 h=220) -->
+                            <figure class="pic"><img src="images/news_list.jpg" alt="[豐原鉅豐牙醫診所-初次／門診諮詢"></figure>
+                            <div class="txt">
+                                <div class="name">[一般門診]</div>
+                                <time class="date">
+                                    ＊根管治療<br />
+                                    ＊口腔外科<br />
+                                    ＊口腔衛生教育<br />
+                                    ＊根管治療<br />
+                                    ＊塗氟齲齒預防<br />
+                                    ＊全口檢查<br />
+                                    ＊牙周病治療<br />
+                                </time>
+                                <div class="description">
+                                    一般牙科主要的內容是服務初診及複診的患者，針對患者的主訴來治療，醫療範圍包含全口的檢查及初步的治療。較複雜的病例則會照院所醫師之專長，給予完整專業的治療計劃，進行治療工作。
+                                </div>
+
+                                <div class="name" style="padding-top:20px;">[齒列矯正]</div>
+
+                                <div class="description" style="padding-top:20px;">
+                                    矯正，就是這麼單純的事。<br />
+                                    隨著時代進步，材料科技應用在矯正器材上已是日新月異。透明矯正器：從樹脂、陶瓷，進步到水晶，再回到強化樹脂。舌側矯正器的起落、自鎖式矯正器的興起，競爭之激烈，廠商之多更是令人迷惑。再加上骨釘的協助應用，到了不管多難的病例都能迎刃而解 近年來再加上隱形矯正器的竄起，帶給新世代更多的選擇，但也令人更加迷網。<br /><br />
+                                    想矯正的人，常藉由各網站，吸取各種先進的知識，進而採取行動。但是網路的知識，畢竟只是一種宣傳或廣告，對於各種矯正形式的認知是非常淺層，帶給你的只是更加疑惑而已，有時連矯正醫師都會被這種以商業掛帥的宣傳所誤導。<br /><br />
+                                    每個醫師的性格不同，學習環境不同，所研習出來的矯正方式也不同。美醜是非常主觀的，再美的人都會有人嫌，再醜的人也有人奉為西施，必須患者與醫師仔細溝通以確認美醜觀。
+                                </div>
+
+                                <div class="name" style="padding-top:20px;">[人工植牙]</div>
+
+                                <div class="description" style="padding-top:20px;">
+                                    人工植牙是缺牙治療的新觀念，早在五十年代，知名的瑞典科學家便發現鈦金屬可以與人類的細胞組織結合，這過程叫做骨整合。一九六五年，首次為一名牙齒已脫盡的病人裝配植入式的牙橋，至今該牙橋仍然非常良好地運作。三十年來這種植齒方法有詳盡而系統性的臨床紀錄，以便精益求精。現今牙患者可以放心接受植牙，因為成功率幾近百分之百。<br /><br />
+                                    人工植牙是將一種人工牙根放入牙床中來取代失去的牙齒。不像傳統的牙橋，人工植牙不須鄰近牙的支撐，得以保留自然牙。<br /><br />
+                                    人工植牙是缺牙的較好的治療方法。人工植牙看起來，感覺起來也像自己的牙齒；並且可預防牙槽骨及牙齦的萎縮。無需銼損靠連的健康牙齒，可維護長期的口腔健康。人工植牙可以讓您放心的吃東西、講話；恢復舒適與自信。<br /><br />
+                                    本診所索引近德國第一品牌F-2(Ffrialit-2)植牙系統，他的特色在於重現真正牙根的上寬下窄外型，能準確的嵌合在拔牙傷口內，並減少齒槽骨的破壞，更能提高植牙的成功率，並且維持原有的齒骨槽外型，對於美觀上的幫助是令人滿意的，尤其全新推出的全磁化支柱體，可以減少金屬外露的不美觀，應用在前牙的美觀性義齒，復建堪稱力求完美的革命性發明。
+                                </div>
+
+                                <div class="name" style="padding-top:20px;">[3D齒雕]</div>
+
+                                <div class="description" style="padding-top:20px;">
+                                    治療齲齒的傳統做法，大多使用銀汞( 銀粉和樹脂)，這兩種材質因為和牙齒的物理性不同，無法真正密合，容易 造成牙齒結構的破壞，一般維持個二到三年就得重新補牙；複合樹脂也容易因為它的收縮膨脹而產生縫隙，細菌 會侵入先前的蛀洞，導致二次蛀牙。<br /><br />
+                                    一般瓷粉堆積燒成的瓷牙，質地太脆，臨床上破損率超過百分之二十。為解決傳統材質造成的問題，蘇黎世大 學研究發明3D齒雕技術，並授權德國西門子製造，而優亞美齒美容機構傳統上，蛀牙的修復材料大都分使用銀粉 （汞合金），和複合樹脂。使用銀粉來填補牙齒長時間之後因為汞離子的釋放，牙齒會漸漸變黑，而且銀粉並未 和牙齒結合成一體，因此容易造成牙齒結構的破壞；而複合樹脂的使用時間一長，則容易因為樹脂膨脹收縮而造 成二次蛀牙及" 引起口臭的問題 " 。相對地，3D齒雕 CEREC 治療則排除了傳統治療材料所引起的種種問題，而 且這種特殊的瓷塊經過了適當的黏著．不但自然美觀，更可以因此增強牙齒的結構。<br /><br />
+                                    數位3D齒雕，可製作出耐用性可長達十多年的瓷牙貼片，該儀器運用電腦輔助設計原理，將口內3D立體攝影機、 螢幕、電腦及自動研磨器等整合在儀器內，協助牙醫師治療齲齒及處理牙齒破損、縫隙過大、變色等補綴工作。<br /><br />
+                                    本診所索引近德國第一品牌F-2(Ffrialit-2)植牙系統，他的特色在於重現真正牙根的上寬下窄外型，能準確的嵌合在拔牙傷口內，並減少齒槽骨的破壞，更能提高植牙的成功率，並且維持原有的齒骨槽外型，對於美觀上的幫助是令人滿意的，尤其全新推出的全磁化支柱體，可以減少金屬外露的不美觀，應用在前牙的美觀性義齒，復建堪稱力求完美的革命性發明。
+                                </div>
+
+                                <div class="name" style="padding-top:20px;">[韓風晶鑽貼片]</div>
+
+                                <div class="description" style="padding-top:20px;">
+                                    在微整形日益風行的今日，人們對於美的詮釋與標準也跟過去大異其趣。大部份的人認為「擁有一口潔白整齊的牙齒，不僅更有自信開懷大笑，對於留給他人良好印象更大大加分」。許多人曾經做過牙齒矯正，但牙齒整齊了，色澤卻依舊暗沉，更多是程度不一的脫鈣白斑。加上酸性食物的影響，造成牙齒表面出現凹蝕痕跡。<br /><br />
+                                    「韓風晶鑽貼片」是目前風靡韓國演藝圈的美白貼片，同時也讓國內外愛美者趨之若騖。它的特色就是為個人量身打造，材質超薄、質感精緻、齒色美觀自然，而且免磨牙免麻醉，讓您一勞永逸找回最佳黃金比例的笑容。
+                                </div>
+                                <br /><br />
+                            </div>
+                        </a>
+                    </li>
+
+
+                </ul>
+            </div>
+        </section>
+
+        <!-- 過場 -->
+        <section>
+            <div class="past">
+                <div class="container">
+                    <div class="titpast">
+                        <h2 class="titpast post" title="診療時間">診療時間</h2>
+                        <h3 class="post" title="診療時間">早診 9:00~12:00 + 午診 2:00~5:30 + 晚診 6:00~8:30</h3>
+                        <img src="images/schedule.jpg" style="margin-top:15px;" class="post1" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 聯絡我們 -->
+        <section>
+            <div class="contact">
+                <div class="container">
+                    <a name="link"><p class="titcontact post">更多資訊與連繫請參Facebook</p></a>
+                    <p class="titcontact post">
+                        <a href="https://www.facebook.com/jufendent/" style="color:white">點我進入</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- 下捲動特效 -->
+        <script>
+            $(function () {
+                $('#btn-down').click(function () {
+                    $('html,body').animate({ scrollTop: $('#section1').offset().top }, 700);
+                });
+            });
+        </script>
+
+        <!-- footer scrolltop -->
+        <script>
+            $(function () {
+                $('#footertop').click(function () {
+                    $('html,body').animate({ scrollTop: $('.banner').offset().top }, 700);
+                });
+            });
+        </script>
+
+
+
+
+        <!-- header 卷軸下拉才出現 -->
+        <script>
+            $(window).scroll(function () {
+                var scroll = $(window).scrollTop();
+
+                if (scroll >= 400) {
+                    $("header").addClass("is-visible");
+                    $(".white-logo").addClass("white-logo-out");
+                    $(".black-logo").addClass("black-logo-in");
+                    $(".hamburger-inner").addClass("hamburger-inner-02");
+                    $(".menu-bg").addClass("menu-li-color");
+                    $(".tel-number").addClass("tel-number-2");
+                    $(".logo-phone").addClass("logo-phone-in");
+                    $(".navbar-fixed-top").css("background", "rgba(255,255,255,0.9)");
+                    $(".navbar-fixed-top").css("border-bottom", "1px solid #ececec");
+                    $(".navbar-default .navbar-nav>li>a").css("color", "#abcd03");
+                    $("#footertop").css("opacity", "1");
+
+
+                } else {
+                    $("header").removeClass("is-visible");
+                    $(".white-logo").removeClass("white-logo-out");
+                    $(".black-logo").removeClass("black-logo-in");
+                    $(".hamburger-inner").removeClass("hamburger-inner-02");
+                    $(".menu-bg").removeClass("menu-li-color");
+                    $(".tel-number").removeClass("tel-number-2");
+                    $(".logo-phone").removeClass("logo-phone-in");
+                    $(".navbar-fixed-top").css("background", "rgba(255,255,255,0.15)");
+                    $(".navbar-fixed-top").css("border-bottom", "none");
+                    $(".navbar-default .navbar-nav>li>a").css("color", "#fff");
+                    $("#footertop").css("opacity", "0");
+                }
+            });
+        </script>
+
+
+
+
+
+
+        <!-- button-hover 特效-->
+        <script>
+            $(function () {
+                $('.portfolio-btn button').hover(function () {
+                    $('.portfolio-btn button').removeClass("hover");
+                    $(this).addClass("hover");
+                });
+            });
+        </script>
+
+
+
+
+
+        <!-- 初始化導航樣式 -->
+        <script>
+            $(document).ready(function () {
+                $(".navbar-fixed-top").css("background", "rgba(255,255,255,0.15)");
+                $(".navbar-default .navbar-nav>li>a").css("color", "#fff");
+            });
+        </script>
+
+        <!-- 漢堡選單特效 -->
+        <script>
+            $(document).ready(function () {
+                $(".hamburger").click(function () {
+                    $(this).toggleClass("is-active");
+                    $(".action-close").toggleClass("action-open");
+                });
+            });
+        </script>
+
+
+
+
+
+
+
+        <!-- 淡入特效 -->
+
+        <script type="text/javascript">
+            // 確保 viewportchecker 載入後執行
+            function initAnimations() {
+                if (typeof jQuery === 'undefined') {
+                    setTimeout(initAnimations, 100);
+                    return;
+                }
+                
+                // 如果 viewportchecker 已載入，直接使用
+                if (typeof jQuery.fn.viewportChecker !== 'undefined') {
+                    // 確保 DOM 已載入
+                    if (document.readyState === 'loading') {
+                        jQuery(document).ready(setupAnimations);
+                    } else {
+                        setupAnimations();
+                    }
+                } else {
+                    // 載入 viewportchecker
+                    loadScript("js/animated-scroll/viewportchecker.js", function () {
+                        setTimeout(function() {
+                            if (document.readyState === 'loading') {
+                                jQuery(document).ready(setupAnimations);
+                            } else {
+                                setupAnimations();
+                            }
+                        }, 100);
+                    });
+                }
+            }
+            
+            function setupAnimations() {
+                // 確保 DOM 已載入
+                if (typeof jQuery === 'undefined' || typeof jQuery.fn.viewportChecker === 'undefined') {
+                    setTimeout(setupAnimations, 100);
+                    return;
+                }
+                
+                // 為所有 .post 元素添加動畫（標題區塊）
+                jQuery('.post').each(function() {
+                    if (!jQuery(this).hasClass('hidden1') && !jQuery(this).hasClass('post1') && !jQuery(this).hasClass('post2') && !jQuery(this).hasClass('post3') && !jQuery(this).hasClass('post4') && !jQuery(this).hasClass('post5') && !jQuery(this).hasClass('post6') && !jQuery(this).hasClass('post7') && !jQuery(this).hasClass('post8') && !jQuery(this).hasClass('post9')) {
+                        jQuery(this).addClass("hidden1");
+                    }
+                }).viewportChecker({
+                    classToAdd: 'visible animated fadeInUp1',
+                    offset: 100
+                });
+                
+                // 醫療團隊動畫 - 當元素進入視窗時添加動畫類
+                // 確保元素初始隱藏
+                jQuery('.nine-content .item2, .nine-content .item3, .nine-content .item4, .nine-content .item5, .nine-content .item6, .nine-content .item7, .nine-content .item8, .nine-content .item9, .nine-content .item10').each(function() {
+                    jQuery(this).css({
+                        'opacity': '0',
+                        'transform': 'scale(0.5)'
+                    });
+                });
+                
+                jQuery('.nine-content .item2').viewportChecker({
+                    classToAdd: 'item-fadeInLeft2',
+                    offset: 100
+                });
+                jQuery('.nine-content .item3').viewportChecker({
+                    classToAdd: 'item-fadeInLeft3',
+                    offset: 100
+                });
+                jQuery('.nine-content .item4').viewportChecker({
+                    classToAdd: 'item-fadeInLeft4',
+                    offset: 100
+                });
+                jQuery('.nine-content .item5').viewportChecker({
+                    classToAdd: 'item-fadeInLeft5',
+                    offset: 100
+                });
+                jQuery('.nine-content .item6').viewportChecker({
+                    classToAdd: 'item-fadeInLeft6',
+                    offset: 100
+                });
+                jQuery('.nine-content .item7').viewportChecker({
+                    classToAdd: 'item-fadeInLeft7',
+                    offset: 100
+                });
+                jQuery('.nine-content .item8').viewportChecker({
+                    classToAdd: 'item-fadeInLeft8',
+                    offset: 100
+                });
+                jQuery('.nine-content .item9').viewportChecker({
+                    classToAdd: 'item-fadeInLeft9',
+                    offset: 100
+                });
+                jQuery('.nine-content .item10').viewportChecker({
+                    classToAdd: 'item-fadeInLeft10',
+                    offset: 100
+                });
+
+
+                //上淡入2//
+                jQuery('.post1').addClass("hidden1").viewportChecker({
+                    classToAdd: 'visible animated fadeInUp2',
+                    offset: 100
+                });
+
+                //上淡入3//
+                jQuery('.post2').addClass("hidden1").viewportChecker({
+                    classToAdd: 'visible animated fadeInUp3',
+                    offset: 100
+                });
+
+                //上淡入4//
+                jQuery('.post3').addClass("hidden1").viewportChecker({
+                    classToAdd: 'visible animated fadeInUp4',
+                    offset: 100
+                });
+
+                //上淡入5//
+                jQuery('.post4').addClass("hidden1").viewportChecker({
+                    classToAdd: 'visible animated fadeInUp5',
+                    offset: 100
+                });
+
+                //上淡入6//
+                jQuery('.post5').addClass("hidden1").viewportChecker({
+                    classToAdd: 'visible animated fadeInUp6',
+                    offset: 100
+                });
+
+                //上淡入7//
+                jQuery('.post6').addClass("hidden1").viewportChecker({
+                    classToAdd: 'visible animated fadeInUp7',
+                    offset: 100
+                });
+
+                //上淡入8//
+                jQuery('.post7').addClass("hidden1").viewportChecker({
+                    classToAdd: 'visible animated fadeInUp8',
+                    offset: 100
+                });
+
+                //上淡入9//
+                jQuery('.post8').addClass("hidden1").viewportChecker({
+                    classToAdd: 'visible animated fadeInUp9',
+                    offset: 100
+                });
+
+                //上淡入10//
+                jQuery('.post9').addClass("hidden1").viewportChecker({
+                    classToAdd: 'visible animated fadeInUp10',
+                    offset: 100
+                });
+
+                //右淡入//
+                jQuery('.rightin').addClass("hidden1").viewportChecker({
+                    classToAdd: 'visible animated fadeInRight',
+                    offset: 100
+                });
+
+                //右淡入1//
+                jQuery('.rightin1').addClass("hidden1").viewportChecker({
+                    classToAdd: 'visible animated fadeInRight1',
+                    offset: 100
+                });
+
+                //右淡入2//
+                jQuery('.rightin2').addClass("hidden1").viewportChecker({
+                    classToAdd: 'visible animated fadeInRight2',
+                    offset: 100
+                });
+
+                //右淡入3//
+                jQuery('.rightin3').addClass("hidden1").viewportChecker({
+                    classToAdd: 'visible animated fadeInRight3',
+                    offset: 100
+                });
+
+                //左淡入//
+                jQuery('.leftin').addClass("hidden1").viewportChecker({
+                    classToAdd: 'visible animated fadeInLeft',
+                    offset: 100
+                });
+
+                //左淡入1//
+                jQuery('.leftin1').addClass("hidden1").viewportChecker({
+                    classToAdd: 'visible animated fadeInLeft1',
+                    offset: 100
+                });
+
+                //左淡入2//
+                jQuery('.leftin2').addClass("hidden1").viewportChecker({
+                    classToAdd: 'visible animated fadeInLeft2',
+                    offset: 100
+                });
+
+                //左淡入3//
+                jQuery('.leftin3').addClass("hidden1").viewportChecker({
+                    classToAdd: 'visible animated fadeInLeft3',
+                    offset: 100
+                });
+            }
+            
+            // 調用初始化函數
+            initAnimations();
+        </script>
+
+
+
+
+
+
+
+    </main>
+    <footer>
+        <div id="footertop" class="hidden-lg">
+            <span>
+                <img src="images/scrolltop_new.png">
+            </span>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-7 footer-L leftin">
+                    <div class="row footer_map">
+                        <div class="col-md-10 clearfix footer_map_in">
+                            <a class="col-md-2 col-xs-4" href="#">客戶作品</a>
+                            <p>｜</p>
+                            <a class="col-md-2 col-xs-4" href="#">最新公告</a>
+
+                            <p>｜</p>
+                            <a class="col-md-2 col-xs-4" href="#">服務流程</a>
+
+                            <p>｜</p>
+                            <a class="col-md-2 col-xs-4" href="#">功能說明</a>
+                        </div>
+                    </div>
+
+                    <p>台中市豐原區和平街50號</p>
+
+
+                    <p><span class="footer-tel">TEL：（04）2524-3313<br />TEL：（04）2526-2662</span></p>
+
+
+
+                    <p>
+                        <a href="https://www.facebook.com/jufendent/" style="color:#848484" target="_blank">Facebook</a>
+                        <a href="https://jufeng.pixnet.net/blog" style="color:#848484" target="_blank">部落格</a>
+
+                    </p>
+                </div>
+
+                <div class="col-md-4 col-sm-5 footer-R rightin">
+                    <p>2020@i-dentist-All rights reserved.</p>
+
+                    <p class="copyright">Copyright by <a href="#">豐原鉅豐牙醫診所</a></p>
+
+                    <!--<div class="right">
+                        <a class="twiter" href="#" target="_blank"><img class="footer-icon" src="http://www.gift-clinic.com/images/footer_icon_f.png" /></a>
+                        <a class="facebook" href="#" target="_blank"><img class="footer-icon" src="http://www.gift-clinic.com/images/footer_icon_g.png" /></a>
+                        <a class="google" href="#" target="_blank"><img class="footer-icon" src="http://www.gift-clinic.com/images/footer_icon_t.png" /></a>
+                        <a class="pintrest" href="#" target="_blank"><img class="footer-icon" src="http://www.gift-clinic.com/images/footer_icon_p.png" /></a>
+                    </div>-->
+                </div>
+
+                <div class="clearfix"></div>
+
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
